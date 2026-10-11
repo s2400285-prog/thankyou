@@ -1,0 +1,1069 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For Julie | I Love You So Much 💙</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --blue: #73bfff;
+        --light-blue: #b9ddff;
+        --white: #f8fbff;
+        --muted: #a7bad7;
+        --background: #020817;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        color: var(--white);
+        background: var(--background);
+        overflow-x: hidden;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: -3;
+        background:
+          radial-gradient(ellipse at 50% 20%, #124c8c 0%, transparent 50%),
+          radial-gradient(ellipse at 10% 70%, #071b45 0%, transparent 45%),
+          radial-gradient(ellipse at 90% 90%, #0b2855 0%, transparent 45%),
+          linear-gradient(180deg, #06152f, #020817 75%);
+      }
+
+      #stars,
+      #particles {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+      }
+
+      #stars {
+        z-index: -2;
+      }
+      #particles {
+        z-index: 2;
+      }
+
+      nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 24px 7%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 5;
+      }
+
+      .logo {
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+        font-size: 18px;
+        color: #d6eaff;
+        text-decoration: none;
+        letter-spacing: 1px;
+      }
+
+      .logo span {
+        color: #79bfff;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 23px;
+      }
+
+      .nav-links a {
+        color: #a8bddc;
+        text-decoration: none;
+        font-size: 9px;
+        letter-spacing: 2px;
+        transition: 0.3s;
+      }
+
+      .nav-links a:hover {
+        color: white;
+        text-shadow: 0 0 12px #75bfff;
+      }
+
+      section {
+        position: relative;
+        z-index: 1;
+        min-height: 100vh;
+        padding: 110px 20px 75px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .eyebrow {
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        color: #84baff;
+        margin-bottom: 24px;
+      }
+
+      h1,
+      h2 {
+        font-family: "Playfair Display", serif;
+        font-weight: 500;
+        line-height: 1.2;
+      }
+
+      .hero h1 {
+        font-size: clamp(44px, 7vw, 75px);
+        text-shadow: 0 0 35px #429cff50;
+      }
+
+      .hero h1 em {
+        display: block;
+        color: var(--light-blue);
+        font-weight: 500;
+        margin-top: 5px;
+      }
+
+      .intro {
+        max-width: 480px;
+        font-size: 12px;
+        line-height: 2.2;
+        color: var(--muted);
+        margin: 23px auto 30px;
+      }
+
+      .photo-frame {
+        width: min(390px, 88vw);
+        height: 265px;
+        padding: 9px;
+        position: relative;
+        border: 1px solid #77baff60;
+        border-radius: 17px;
+        background: linear-gradient(135deg, #5eaaff20, #08172c);
+        box-shadow:
+          0 0 25px #248dff30,
+          0 0 90px #146bce25,
+          inset 0 0 20px #71b8ff12;
+        overflow: hidden;
+        animation: glow 4s ease-in-out infinite;
+      }
+
+      @keyframes glow {
+        0%,
+        100% {
+          box-shadow:
+            0 0 25px #248dff30,
+            0 0 60px #146bce20;
+        }
+        50% {
+          box-shadow:
+            0 0 35px #248dff55,
+            0 0 100px #146bce45;
+        }
+      }
+
+      .photo-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+        display: block;
+      }
+
+      .photo-placeholder {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 12px;
+        color: #bddcff;
+        font-size: 12px;
+      }
+
+      .photo-placeholder span {
+        font-size: 42px;
+      }
+
+      .photo-caption {
+        color: #9cb8db;
+        font-size: 10px;
+        letter-spacing: 2px;
+        margin-top: 20px;
+      }
+
+      .scroll-note {
+        position: absolute;
+        bottom: 25px;
+        font-size: 9px;
+        letter-spacing: 3px;
+        color: #8ca9ce;
+        animation: float 2s infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(7px);
+        }
+      }
+
+      .heart-icon {
+        color: #8fc8ff;
+        font-size: 23px;
+        margin-bottom: 20px;
+        animation: heartbeat 1.6s infinite;
+      }
+
+      @keyframes heartbeat {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.2);
+        }
+      }
+
+      .message-section h2 {
+        font-size: clamp(38px, 6vw, 63px);
+      }
+
+      .message-section h2 em {
+        display: block;
+        color: #9dcaff;
+        margin-top: 8px;
+      }
+
+      .letter {
+        width: min(650px, 94%);
+        margin-top: 38px;
+        padding: 34px clamp(22px, 5vw, 43px);
+        border: 1px solid #83bdff25;
+        border-radius: 18px;
+        background: linear-gradient(145deg, #0b2345aa, #071329bb);
+        box-shadow: 0 15px 60px #00000025;
+        text-align: left;
+        backdrop-filter: blur(12px);
+      }
+
+      .letter h3 {
+        font-family: "Playfair Display", serif;
+        color: #c2e0ff;
+        font-size: 25px;
+        font-weight: 500;
+        margin-bottom: 22px;
+      }
+
+      .letter p {
+        font-size: 12px;
+        line-height: 2.2;
+        color: #b5c7e1;
+        margin-bottom: 17px;
+      }
+
+      .letter .sign {
+        font-family: "Playfair Display", serif;
+        font-size: 22px;
+        font-style: italic;
+        color: #9dceff;
+        margin-top: 25px;
+      }
+
+      .divider {
+        width: 70px;
+        height: 1px;
+        margin: 26px auto;
+        background: linear-gradient(90deg, transparent, #83bdff, transparent);
+      }
+
+      .verse-card {
+        width: min(600px, 94%);
+        padding: 35px 25px;
+        border: 1px solid #83bdff35;
+        border-radius: 18px;
+        background: #0a1b35aa;
+        margin-top: 35px;
+        box-shadow: 0 0 50px #1d76c715;
+      }
+
+      .verse-card .cross {
+        color: #8bc6ff;
+        font-size: 25px;
+        margin-bottom: 17px;
+      }
+
+      .verse-card blockquote {
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+        font-size: clamp(19px, 4vw, 27px);
+        line-height: 1.7;
+        color: #d4e7ff;
+      }
+
+      .verse-card cite {
+        display: block;
+        font-family: "Poppins", sans-serif;
+        font-style: normal;
+        font-size: 10px;
+        letter-spacing: 2px;
+        color: #83baff;
+        margin-top: 18px;
+      }
+
+      .small-text {
+        color: #9bb3d5;
+        font-size: 12px;
+        line-height: 2.1;
+        max-width: 450px;
+        margin-top: 18px;
+      }
+
+      .buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 30px;
+      }
+
+      .btn {
+        font-family: "Poppins", sans-serif;
+        cursor: pointer;
+        border: 1px solid #79baff60;
+        border-radius: 40px;
+        background: #0d2a4d;
+        color: #c8e4ff;
+        padding: 13px 21px;
+        font-size: 11px;
+        letter-spacing: 0.5px;
+        transition: 0.3s;
+      }
+
+      .btn:hover {
+        background: #194a7c;
+        border-color: #9bd0ff;
+        box-shadow: 0 0 25px #388ee955;
+        transform: translateY(-3px);
+      }
+
+      .btn.primary {
+        background: linear-gradient(120deg, #276db1, #4e83ca);
+        border-color: #8bc4ff;
+        color: white;
+      }
+
+      .hidden-message {
+        display: none;
+        width: min(500px, 92%);
+        margin: 25px auto 0;
+        padding: 24px;
+        border: 1px solid #83bdff40;
+        border-radius: 15px;
+        background: #0b2344ed;
+        color: #d0e5ff;
+        font-size: 12px;
+        line-height: 2.1;
+        animation: appear 0.5s ease;
+      }
+
+      @keyframes appear {
+        from {
+          opacity: 0;
+          transform: translateY(12px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .music-box {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        width: min(420px, 92%);
+        margin-top: 35px;
+        padding: 15px 18px;
+        border-radius: 16px;
+        border: 1px solid #81bbff30;
+        background: #0b1f3bce;
+        text-align: left;
+      }
+
+      .disc {
+        width: 49px;
+        height: 49px;
+        flex-shrink: 0;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          #bcdfff 0 8%,
+          #174a7e 10% 23%,
+          #07101f 25% 50%,
+          #316aa5 52% 54%,
+          #080f1d 56%
+        );
+        box-shadow: 0 0 17px #5eaaff40;
+      }
+
+      .disc.playing {
+        animation: spin 3s linear infinite;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .music-details {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .music-details strong {
+        display: block;
+        font-size: 11px;
+        color: #e0efff;
+      }
+
+      .music-details span {
+        display: block;
+        font-size: 10px;
+        color: #90b4df;
+        margin-top: 5px;
+      }
+
+      .music-button {
+        border: none;
+        cursor: pointer;
+        border-radius: 50%;
+        width: 38px;
+        height: 38px;
+        color: white;
+        background: #2768a7;
+        font-size: 15px;
+      }
+
+      footer {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        padding: 35px 20px 45px;
+        color: #7896bd;
+        font-size: 10px;
+        letter-spacing: 1px;
+        line-height: 2.3;
+      }
+
+      footer span {
+        color: #9ecfff;
+      }
+
+      @media (max-width: 600px) {
+        nav {
+          padding: 20px 5%;
+        }
+
+        .nav-links {
+          gap: 11px;
+        }
+
+        .nav-links a {
+          font-size: 8px;
+          letter-spacing: 1px;
+        }
+
+        .logo {
+          font-size: 15px;
+        }
+
+        section {
+          padding-top: 100px;
+          padding-bottom: 65px;
+        }
+
+        .photo-frame {
+          height: 235px;
+        }
+
+        .letter {
+          padding: 27px 22px;
+        }
+
+        .letter p {
+          font-size: 12px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <canvas id="stars"></canvas>
+    <canvas id="particles"></canvas>
+
+    <nav>
+      <a href="#home" class="logo">♡ <span>Julie</span></a>
+
+      <div class="nav-links">
+        <a href="#home">HOME</a>
+        <a href="#letter">LETTER</a>
+        <a href="#prayer">PRAYER</a>
+        <a href="#surprises">SURPRISES</a>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="eyebrow">A little universe, just for you</div>
+
+      <h1>
+        I Love You
+        <em>So Much</em>
+      </h1>
+
+      <p class="intro">
+        For the girl who makes ordinary moments feel special. This little corner
+        of the universe is dedicated to you, baby Julie. 💙
+      </p>
+
+      <div class="photo-frame" id="photoFrame">
+        <!-- Replace us.jpg with your photo's filename -->
+        <img
+          src="us.jpg"
+          alt="A special memory of us"
+          onerror="
+            this.style.display = 'none';
+            document.getElementById('photoPlaceholder').style.display = 'flex';
+          "
+        />
+
+        <div
+          class="photo-placeholder"
+          id="photoPlaceholder"
+          style="display: none"
+        >
+          <span>♡</span>
+          <p>Add your photo named us.jpg</p>
+        </div>
+      </div>
+
+      <div class="photo-caption">MY FAVORITE PERSON · MY JULIE ♡</div>
+
+      <div class="music-box">
+        <div class="disc" id="disc"></div>
+        <div class="music-details">
+          <strong>A little song for you</strong>
+          <span id="musicStatus">A melody made for this moment ♡</span>
+        </div>
+        <button
+          class="music-button"
+          id="musicButton"
+          onclick="toggleMusic()"
+          aria-label="Play or pause music"
+        >
+          ▶
+        </button>
+      </div>
+
+      <p class="small-text">
+        Put on your headphones, baby. This little page is waiting to tell you
+        something from my heart. ♡
+      </p>
+
+      <div class="scroll-note">SCROLL DOWN · THERE IS MORE FOR YOU ↓</div>
+    </section>
+
+    <!-- LOVE LETTER -->
+    <section class="message-section" id="letter">
+      <div class="heart-icon">♡</div>
+
+      <div class="eyebrow">Words from my heart</div>
+
+      <h2>
+        I Love You
+        <em>More Than Words</em>
+      </h2>
+
+      <p class="small-text">
+        Some feelings are too big for a simple thank-you, but I hope these words
+        help you understand. 💙
+      </p>
+
+      <article class="letter">
+        <h3>My dearest Julie, ♡</h3>
+
+        <p>
+          Hi, baby. I made this little website because I want you to know how
+          thankful I am for you. Sometimes, I think about the little things you
+          do, and I smile because I realize how lucky I am to know someone with
+          a heart like yours.
+        </p>
+
+        <p>
+          Baby, thank you for everything you've done for me. Even the things
+          that may seem small to you mean so much to me. Like when you bought me
+          a load even though I didn't ask you to. 🥹
+        </p>
+
+        <p>
+          You didn't have to do that, love, but you still thought of me. It
+          wasn't just about having load on my phone. It was the thought, the
+          kindness, and the fact that you did something for me without me even
+          asking. That little gesture genuinely made me happy.
+        </p>
+
+        <p>
+          HAHAHA, baby, I was not expecting that surprise! 😭💙 It's such a
+          simple thing, but it reminded me that sometimes the sweetest moments
+          come from things we never even expect. Thank you for making me feel
+          remembered and cared for.
+        </p>
+
+        <p>
+          But please know something, Julie: I appreciate you for so much more
+          than the things you do for me. I appreciate you as a person. I
+          appreciate your heart, your kindness, your personality, your efforts,
+          and the little ways you make the people around you feel special.
+        </p>
+
+        <p>
+          You don't need to buy me anything or spend money to make me happy.
+          Your time is precious to me. Your messages, your laughter, your
+          stories, and even the simple moments when we get to talk already mean
+          a lot. I want you to feel that you are valued for who you are, not for
+          what you can give.
+        </p>
+
+        <p>
+          I hope that I can give you the same kindness you give me. I hope I can
+          become someone who brings peace to your heart, makes you smile after a
+          tiring day, listens when you need someone, and reminds you that you
+          are appreciated.
+        </p>
+
+        <p>
+          Baby, I also pray for your family. May God bless your home with good
+          health, peace, love, and provision. May He protect each of you
+          wherever you go, guide you through every challenge, and give you
+          strength when things get difficult.
+        </p>
+
+        <p>
+          May God bless your family's work, plans, dreams, and daily needs. May
+          your home always have reasons to smile, hearts that remain grateful,
+          and faith that stays strong through every season of life. I pray that
+          His goodness and grace continue to follow all of you.
+        </p>
+
+        <p>
+          I thank God for the opportunity to know you, Julie. I know that I
+          still have a lot to learn about you, and I don't want to rush the
+          beautiful process of getting to know each other. I just want to keep
+          showing you sincere care, patience, respect, and appreciation.
+        </p>
+
+        <p>
+          Whenever you feel tired or think that nobody notices your efforts, I
+          hope you remember that your kindness matters. The things you do
+          matter. And you, as a person, matter so much more than you might
+          realize.
+        </p>
+
+        <p>
+          Thank you for the unexpected load, the little surprises, the time you
+          share with me, and the happiness you bring into my days. Thank you for
+          being Julie: the person I am grateful to know and the person who makes
+          me smile just by being herself.
+        </p>
+
+        <p>
+          I hope this little website makes you smile, even just a little. If it
+          does, then my mission is accomplished. Hehehe. You deserve sweet
+          moments, gentle love, genuine people, and beautiful blessings from
+          God.
+        </p>
+
+        <p>
+          Take care of yourself too, baby. Rest when you're tired, eat well, and
+          don't forget to give yourself the same kindness that you give to
+          others. You deserve that kind of care, too. 🤍
+        </p>
+
+        <p>
+          Thank you for everything, my Julie. May God bless you and your family
+          today, tomorrow, and in all the days to come. I'm so grateful for you,
+          and I hope I can continue making you feel appreciated in the little
+          ways that matter.
+        </p>
+
+        <div class="divider"></div>
+
+        <p class="sign">
+          With all my love and gratitude,<br />
+          your baby ♡
+        </p>
+      </article>
+    </section>
+
+    <!-- PRAYER -->
+    <section id="prayer">
+      <div class="eyebrow">A prayer for you and your family</div>
+
+      <h2 style="font-size: clamp(38px, 6vw, 60px)">
+        Covered in
+        <em style="color: #9dcaff">His Grace.</em>
+      </h2>
+
+      <div class="verse-card">
+        <div class="cross">✝</div>
+
+        <blockquote>"The LORD bless thee, and keep thee."</blockquote>
+
+        <cite>NUMBERS 6:24 · KJV</cite>
+
+        <div class="divider"></div>
+
+        <p class="small-text" style="margin-left: auto; margin-right: auto">
+          Dear Heavenly Father, thank You for Julie and her family. Please
+          surround them with Your protection, fill their home with peace, and
+          provide for their needs. Give them good health, wisdom, strength, and
+          joy. Guide their decisions and help them trust You even when life
+          feels uncertain. Bless the kindness they share with others, and let
+          them always feel Your love and presence. In Jesus' name, Amen. 🤍
+        </p>
+      </div>
+
+      <p class="small-text">
+        May your family be blessed, protected, and guided by God every single
+        day, Julie. ♡
+      </p>
+    </section>
+
+    <!-- INTERACTIVE SURPRISES -->
+    <section id="surprises">
+      <div class="eyebrow">A few things I want you to know</div>
+
+      <h2 style="font-size: clamp(38px, 6vw, 60px)">
+        Just for
+        <em style="color: #9dcaff">You, Baby.</em>
+      </h2>
+
+      <p class="small-text">
+        There are a few little messages hidden here. Choose a button, and let me
+        tell you something. 💙
+      </p>
+
+      <div class="buttons">
+        <button class="btn primary" onclick="openNote('note1')">
+          💙 A little reminder
+        </button>
+
+        <button class="btn" onclick="openNote('note2')">
+          📱 About the load HAHAHA
+        </button>
+
+        <button class="btn" onclick="openNote('note3')">
+          🙏 My prayer for you
+        </button>
+
+        <button class="btn" onclick="openNote('note4')">
+          💌 One last thing
+        </button>
+      </div>
+
+      <div class="hidden-message" id="note1">
+        Baby Julie, please remember that you don't need to do anything special
+        to deserve appreciation. You are already worthy of kindness, rest,
+        respect, and genuine care. I hope you never forget how precious you are
+        as a person. ♡
+      </div>
+
+      <div class="hidden-message" id="note2">
+        BABYYYY HAHAHAHA 😭💙 Thank you sa load! I didn't even ask, pero you
+        still loaded my number. My phone got a little load, but my heart got a
+        whole lot of happiness. HAHAHA. Thank you for thinking of me, love.
+        Don't worry, I appreciate YOU more than the load. 🤣💕
+      </div>
+
+      <div class="hidden-message" id="note3">
+        Lord, please take care of Julie and her family. Bless them with health,
+        peace, protection, and everything they need. Give them courage during
+        hard days and grateful hearts during good days. Please guide their steps
+        and keep their family close to You. May their home always be filled with
+        Your love. In Jesus' name, Amen. ✝
+      </div>
+
+      <div class="hidden-message" id="note4">
+        If you made it all the way here, baby, then congratulations! You have
+        officially completed my little love website. HAHAHA. 🥹💙 But seriously,
+        thank you for being part of my life. I hope I can return your kindness
+        with sincerity, patience, and care. You deserve to feel appreciated,
+        too. May God bless you always, Julie. Sending you the biggest virtual
+        hug! 🫂
+      </div>
+
+      <div class="buttons">
+        <button class="btn primary" onclick="sendLove()">
+          ♡ Send a thousand hearts
+        </button>
+        <button
+          class="btn"
+          onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+        >
+          ↑ Back to the beginning
+        </button>
+      </div>
+
+      <div class="hidden-message" id="loveMessage">
+        💙 💙 💙 A thousand hearts for you, Julie! 💙 💙 💙<br /><br />
+        You are appreciated, you are prayed for, and you deserve so many
+        beautiful blessings. May God bless you and your family always. ♡
+      </div>
+    </section>
+
+    <footer>
+      <p>MADE WITH LOVE, GRATITUDE & A LITTLE BIT OF SHYNESS ♡</p>
+      <p>For Julie, my favorite person.</p>
+      <span>May God's goodness follow you always. ✝</span>
+    </footer>
+
+    <!-- Add your music file in the same folder, named music.mp3 -->
+    <audio id="bgMusic" loop preload="none">
+      <source src="music.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script>
+      // STARRY BACKGROUND
+      const starCanvas = document.getElementById("stars");
+      const starCtx = starCanvas.getContext("2d");
+
+      let stars = [];
+
+      function resizeStars() {
+        const ratio = Math.min(window.devicePixelRatio || 1, 2);
+
+        starCanvas.width = window.innerWidth * ratio;
+        starCanvas.height = window.innerHeight * ratio;
+        starCanvas.style.width = window.innerWidth + "px";
+        starCanvas.style.height = window.innerHeight + "px";
+
+        starCtx.setTransform(ratio, 0, 0, ratio, 0, 0);
+
+        stars = [];
+
+        for (let i = 0; i < 140; i++) {
+          stars.push({
+            x: Math.random() * window.innerWidth,
+            y: Math.random() * window.innerHeight,
+            r: Math.random() * 1.5 + 0.3,
+            alpha: Math.random(),
+            speed: Math.random() * 0.015 + 0.003,
+          });
+        }
+      }
+
+      function drawStars() {
+        starCtx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+
+        stars.forEach((star) => {
+          star.alpha += star.speed;
+
+          const opacity = 0.25 + Math.abs(Math.sin(star.alpha)) * 0.65;
+
+          starCtx.beginPath();
+          starCtx.arc(star.x, star.y, star.r, 0, Math.PI * 2);
+          starCtx.fillStyle = `rgba(180,220,255,${opacity})`;
+          starCtx.fill();
+        });
+
+        requestAnimationFrame(drawStars);
+      }
+
+      resizeStars();
+      drawStars();
+
+      window.addEventListener("resize", resizeStars);
+
+      // FLOATING BLUE PARTICLES
+      const particleCanvas = document.getElementById("particles");
+      const particleCtx = particleCanvas.getContext("2d");
+
+      let particles = [];
+
+      function resizeParticles() {
+        const ratio = Math.min(window.devicePixelRatio || 1, 2);
+
+        particleCanvas.width = window.innerWidth * ratio;
+        particleCanvas.height = window.innerHeight * ratio;
+        particleCanvas.style.width = window.innerWidth + "px";
+        particleCanvas.style.height = window.innerHeight + "px";
+
+        particleCtx.setTransform(ratio, 0, 0, ratio, 0, 0);
+      }
+
+      function makeParticle(x, y) {
+        return {
+          x: x === undefined ? Math.random() * window.innerWidth : x,
+          y: y === undefined ? window.innerHeight + 10 : y,
+          size: Math.random() * 3 + 1,
+          speed: Math.random() * 0.7 + 0.3,
+          opacity: Math.random() * 0.6 + 0.2,
+        };
+      }
+
+      for (let i = 0; i < 35; i++) {
+        particles.push(
+          makeParticle(
+            Math.random() * window.innerWidth,
+            Math.random() * window.innerHeight,
+          ),
+        );
+      }
+
+      function drawParticles() {
+        particleCtx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+
+        particles.forEach((p) => {
+          p.y -= p.speed;
+
+          if (p.y < -10) {
+            p.y = window.innerHeight + 10;
+            p.x = Math.random() * window.innerWidth;
+          }
+
+          particleCtx.beginPath();
+          particleCtx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+
+          particleCtx.fillStyle = `rgba(103,180,255,${p.opacity})`;
+
+          particleCtx.shadowBlur = 12;
+          particleCtx.shadowColor = "#4a9eff";
+          particleCtx.fill();
+          particleCtx.shadowBlur = 0;
+        });
+
+        requestAnimationFrame(drawParticles);
+      }
+
+      resizeParticles();
+      drawParticles();
+
+      window.addEventListener("resize", resizeParticles);
+
+      // INTERACTIVE LOVE NOTES
+      function openNote(id) {
+        const selected = document.getElementById(id);
+        const isOpen = selected.style.display === "block";
+
+        document.querySelectorAll(".hidden-message").forEach((note) => {
+          note.style.display = "none";
+        });
+
+        if (!isOpen) {
+          selected.style.display = "block";
+
+          selected.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+          });
+        }
+      }
+
+      function sendLove() {
+        const box = document.getElementById("loveMessage");
+
+        document.querySelectorAll(".hidden-message").forEach((note) => {
+          note.style.display = "none";
+        });
+
+        box.style.display = "block";
+
+        // A burst of glowing hearts follows the button click.
+        for (let i = 0; i < 35; i++) {
+          const x = Math.random() * window.innerWidth;
+          const y = window.innerHeight * (0.25 + Math.random() * 0.5);
+
+          particles.push({
+            x: x,
+            y: y,
+            size: Math.random() * 4 + 2,
+            speed: Math.random() * 2 + 0.8,
+            opacity: 0.9,
+          });
+        }
+
+        box.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+      }
+
+      // MUSIC PLAYER
+      const music = document.getElementById("bgMusic");
+      const musicButton = document.getElementById("musicButton");
+      const musicStatus = document.getElementById("musicStatus");
+      const disc = document.getElementById("disc");
+
+      async function toggleMusic() {
+        if (music.paused) {
+          try {
+            await music.play();
+
+            musicButton.textContent = "Ⅱ";
+            musicStatus.textContent = "Now playing, just for you ♡";
+            disc.classList.add("playing");
+          } catch (error) {
+            musicStatus.textContent =
+              "Please add music.mp3 to the webpage folder.";
+          }
+        } else {
+          music.pause();
+
+          musicButton.textContent = "▶";
+          musicStatus.textContent = "Paused for now ♡";
+          disc.classList.remove("playing");
+        }
+      }
+
+      music.addEventListener("error", () => {
+        musicStatus.textContent = "Add your music.mp3 file to play your song ♡";
+      });
+    </script>
+  </body>
+</html>
